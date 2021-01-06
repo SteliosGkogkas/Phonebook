@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+
+{% block title %}
+{{ post.name }}
+{% endblock %}
+
+{% block content %}
+
+<h1>{{ post.name }}</h1>
+<small>By: {{ post.user }}</small>
+<hr />
+<br />
+<ul>{{ post.phone_number }}<br />
+    {{ post.mobilephone_number }}<br />
+    {{ post.address }}<br/></ul>
+
+<br />
+<br />
+<a href="{% url 'home' %}"><button type="button" class="btn btn-outline-dark">Back</button></a>
+
+{% endblock %}

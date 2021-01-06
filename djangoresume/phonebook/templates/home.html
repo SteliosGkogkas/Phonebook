@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>This is my Phonebook</h1>
+
+<ul>
+{% for post in object_list %}
+    <li>
+        <a href="{% url 'phonebook-detail' post.pk %}">{{post.name}}</a>
+        <small><a href="{% url 'update_post' post.pk %}">(Edit)</a></small>
+        <small><a href="{% url 'delete_post' post.pk %}">(Delete)</a><br /></small>
+        {{post.phone_number}}<br />
+        {{post.mobilephone_number}}<br />
+        {{post.address}}
+    </li>
+{% endfor%}
+</ul>
+
+{% endblock %}
